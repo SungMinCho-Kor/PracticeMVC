@@ -19,6 +19,8 @@ class PlayersView: UIView {
     @IBOutlet weak var player2Score: UILabel!
     @IBOutlet weak var player2Done: UILabel!
     
+    var delegate: PlayerViewDelegate!
+    
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         // xibSetup() // 하면 storyboard에서 실시간(컴파일타임)에 inspector창에서 변경해도 확인 불가
@@ -55,9 +57,15 @@ class PlayersView: UIView {
     }
     
     @IBAction func player1GetScoreButtonTapped(_ sender: UIButton) {
-        
+        delegate.player1GetOneScore()
     }
     @IBAction func player2GetScoreButtonTapped(_ sender: UIButton) {
+        delegate.player2GetOneScore()
     }
     
+}
+
+protocol PlayerViewDelegate{
+    func player1GetOneScore()
+    func player2GetOneScore()
 }

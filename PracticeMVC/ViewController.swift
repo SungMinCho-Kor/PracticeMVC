@@ -16,9 +16,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         playersView.setPlayersInformation(p1: player1, p2: player2)
-        
+        playersView.delegate = self
     }
-    
 
 }
 
+extension ViewController: PlayerViewDelegate{
+    func player1GetOneScore() {
+        player1.score += 1
+    }
+    func player2GetOneScore() {
+        player2.score += 1
+    }
+}

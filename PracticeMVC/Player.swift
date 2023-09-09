@@ -24,7 +24,4 @@ struct Player {
         self.done = false
     }
     
-    mutating func getScore(score: Int){
-        self.score += score
-    }
 }
