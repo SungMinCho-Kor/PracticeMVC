@@ -67,13 +67,22 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="player2 done" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nol-rZ-ZdK">
+                    <rect key="frame" x="180" y="55" width="120" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="lFL-i3-bUt"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQ9-Cd-ND3">
                     <rect key="frame" x="0.0" y="115" width="120" height="35"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="120" id="tRj-7t-0ef"/>
                     </constraints>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="p1 button" titleAlignment="center"/>
+                    <buttonConfiguration key="configuration" style="filled" title="p1 button" titleAlignment="center"/>
                     <connections>
                         <action selector="player1GetScoreButtonTapped:" destination="-1" eventType="touchUpInside" id="BUq-qy-FfY"/>
                     </connections>
@@ -84,20 +93,11 @@
                         <constraint firstAttribute="width" constant="120" id="stm-N9-qOe"/>
                     </constraints>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="p2 button" titleAlignment="center"/>
+                    <buttonConfiguration key="configuration" style="filled" title="p2 button" titleAlignment="center"/>
                     <connections>
                         <action selector="player2GetScoreButtonTapped:" destination="-1" eventType="touchUpInside" id="ang-HD-JtY"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="player2 done" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nol-rZ-ZdK">
-                    <rect key="frame" x="180" y="55" width="120" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="120" id="lFL-i3-bUt"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>

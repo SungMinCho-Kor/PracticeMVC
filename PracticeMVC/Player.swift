@@ -9,17 +9,19 @@ import Foundation
 
 struct Player {
     let name: String
-    var score: Int
-    var done: Bool {
-        if self.score > 10{
-            return true
+    var score: Int {
+        didSet{
+            if score > 10{
+                done = true
+            }
         }
-        return false
     }
+    var done: Bool
     
     init(name: String = "Guest Player", score: Int = 0) {
         self.name = name
         self.score = score
+        self.done = false
     }
     
     mutating func getScore(score: Int){
