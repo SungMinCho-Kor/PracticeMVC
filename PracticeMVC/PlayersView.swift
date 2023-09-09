@@ -20,6 +20,7 @@ class PlayersView: UIView {
     @IBOutlet weak var player2Done: UILabel!
     
     var delegate: PlayerViewDelegate!
+    var dataSource: PlayerViewDataSource!
     
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
@@ -58,9 +59,13 @@ class PlayersView: UIView {
     
     @IBAction func player1GetScoreButtonTapped(_ sender: UIButton) {
         delegate.player1GetOneScore()
+        let player = dataSource.getPlayer1()
+        print(player.name, player.score, player.done)
     }
     @IBAction func player2GetScoreButtonTapped(_ sender: UIButton) {
         delegate.player2GetOneScore()
+        let player = dataSource.getPlayer2()
+        print(player.name, player.score, player.done)
     }
     
 }
@@ -69,3 +74,9 @@ protocol PlayerViewDelegate{
     func player1GetOneScore()
     func player2GetOneScore()
 }
+
+protocol PlayerViewDataSource{
+    func getPlayer1() -> Player
+    func getPlayer2() -> Player
+}
+

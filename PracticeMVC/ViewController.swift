@@ -17,6 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         playersView.setPlayersInformation(p1: player1, p2: player2)
         playersView.delegate = self
+        playersView.dataSource = self
     }
 
 }
@@ -27,5 +28,14 @@ extension ViewController: PlayerViewDelegate{
     }
     func player2GetOneScore() {
         player2.score += 1
+    }
+}
+
+extension ViewController: PlayerViewDataSource{
+    func getPlayer1() -> Player {
+        return player1
+    }
+    func getPlayer2() -> Player {
+        return player2
     }
 }
