@@ -8,9 +8,11 @@
 import UIKit
 
 class PlayersView: UIView {
+    @IBOutlet weak var clearButton: UIButton!
     override init(frame: CGRect) {
         super.init(frame: frame)
         xibSetup()
+
     }
     @IBOutlet weak var player1Name: UILabel!
     @IBOutlet weak var player1Score: UILabel!
@@ -18,6 +20,7 @@ class PlayersView: UIView {
     @IBOutlet weak var player2Name: UILabel!
     @IBOutlet weak var player2Score: UILabel!
     @IBOutlet weak var player2Done: UILabel!
+    
     
     var delegate: PlayerViewDelegate!
     var dataSource: PlayerViewDataSource!
@@ -39,6 +42,7 @@ class PlayersView: UIView {
         view.frame = bounds
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(view)
+        self.clearButton.addTarget(self, action: #selector(self.clearButtonTapped(_:)), for: UIButton.Event.touchUpInside)        
     }
 
     func loadViewFromNib(nib: String) -> UIView? {
@@ -68,6 +72,14 @@ class PlayersView: UIView {
         print(player.name, player.score, player.done)
     }
     
+    @objc func clearButtonTapped(_ sender: UIButton){
+        //code
+    }
+    @IBAction func clearButtonTapped2(_ sender: UIButton) {
+        //code
+    }
+    
+
 }
 
 protocol PlayerViewDelegate{

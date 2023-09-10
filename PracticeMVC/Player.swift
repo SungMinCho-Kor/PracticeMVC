@@ -13,6 +13,8 @@ struct Player {
         didSet{
             if score > 10{
                 done = true
+            } else {
+                done = false
             }
         }
     }

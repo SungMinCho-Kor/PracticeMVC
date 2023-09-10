@@ -18,8 +18,13 @@ class ViewController: UIViewController {
         playersView.setPlayersInformation(p1: player1, p2: player2)
         playersView.delegate = self
         playersView.dataSource = self
+        playersView.clearButton.addTarget(self, action: #selector(clearButtonTapped(_:)), for: .touchUpInside)
     }
-
+    
+    @objc func clearButtonTapped(_ sender: UIButton){
+        player1.score = 0
+        player2.score = 0
+    }
 }
 
 extension ViewController: PlayerViewDelegate{

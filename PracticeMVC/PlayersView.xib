@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlayersView" customModule="PracticeMVC" customModuleProvider="target">
             <connections>
+                <outlet property="clearButton" destination="yal-5I-i8g" id="R40-Rd-2aw"/>
                 <outlet property="player1Done" destination="YXa-aD-ogs" id="0QH-3g-adv"/>
                 <outlet property="player1Name" destination="F72-8B-ZFY" id="Iyb-6t-bHd"/>
                 <outlet property="player1Score" destination="LEo-1H-grn" id="qLD-mc-oKG"/>
@@ -19,7 +20,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
+            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="player1 name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F72-8B-ZFY">
@@ -77,7 +78,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQ9-Cd-ND3">
-                    <rect key="frame" x="0.0" y="115" width="120" height="35"/>
+                    <rect key="frame" x="0.0" y="96" width="120" height="35"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="120" id="tRj-7t-0ef"/>
                     </constraints>
@@ -88,7 +89,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGd-nm-kwz">
-                    <rect key="frame" x="180" y="115" width="120" height="35"/>
+                    <rect key="frame" x="180" y="96" width="120" height="35"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="120" id="stm-N9-qOe"/>
                     </constraints>
@@ -98,16 +99,27 @@
                         <action selector="player2GetScoreButtonTapped:" destination="-1" eventType="touchUpInside" id="ang-HD-JtY"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yal-5I-i8g" userLabel="clear button">
+                    <rect key="frame" x="119" y="255" width="62" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="gray" title="clear"/>
+                    <connections>
+                        <action selector="clearButtonTapped2:" destination="-1" eventType="touchUpInside" id="xEQ-0D-hvL"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="nol-rZ-ZdK" firstAttribute="top" secondItem="JSu-kp-rqW" secondAttribute="bottom" constant="8" symbolic="YES" id="3mB-R8-xEE"/>
                 <constraint firstItem="PQ9-Cd-ND3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5Sn-Xe-3lz"/>
+                <constraint firstAttribute="bottom" secondItem="yal-5I-i8g" secondAttribute="bottom" constant="10" id="6n7-Vx-QsM"/>
                 <constraint firstAttribute="trailing" secondItem="mGd-nm-kwz" secondAttribute="trailing" id="8no-mN-M4E"/>
                 <constraint firstItem="JSu-kp-rqW" firstAttribute="top" secondItem="jg2-p1-erc" secondAttribute="bottom" constant="5" id="CPJ-6M-J1s"/>
                 <constraint firstItem="JSu-kp-rqW" firstAttribute="width" secondItem="F72-8B-ZFY" secondAttribute="width" id="Doj-tH-Xkg"/>
                 <constraint firstItem="YXa-aD-ogs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Drh-5U-85L"/>
+                <constraint firstItem="PQ9-Cd-ND3" firstAttribute="top" secondItem="YXa-aD-ogs" secondAttribute="bottom" constant="20" id="E1s-NM-7Jk"/>
                 <constraint firstItem="LEo-1H-grn" firstAttribute="width" secondItem="F72-8B-ZFY" secondAttribute="width" id="EYw-Sb-Mrw"/>
+                <constraint firstItem="mGd-nm-kwz" firstAttribute="top" secondItem="nol-rZ-ZdK" secondAttribute="bottom" constant="20" id="FOh-4q-d7C"/>
                 <constraint firstItem="YXa-aD-ogs" firstAttribute="width" secondItem="F72-8B-ZFY" secondAttribute="width" id="IpN-EJ-pxN"/>
                 <constraint firstItem="jg2-p1-erc" firstAttribute="width" secondItem="F72-8B-ZFY" secondAttribute="width" id="KDf-yV-Aj4"/>
                 <constraint firstItem="LEo-1H-grn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="LJx-K5-LWu"/>
@@ -119,10 +131,9 @@
                 <constraint firstAttribute="trailing" secondItem="JSu-kp-rqW" secondAttribute="trailing" id="aDg-Fd-ADF"/>
                 <constraint firstItem="mGd-nm-kwz" firstAttribute="width" secondItem="PQ9-Cd-ND3" secondAttribute="width" id="bDh-St-26U"/>
                 <constraint firstItem="nol-rZ-ZdK" firstAttribute="width" secondItem="F72-8B-ZFY" secondAttribute="width" id="bIS-0f-4me"/>
+                <constraint firstItem="yal-5I-i8g" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dFS-rr-fET"/>
                 <constraint firstAttribute="trailing" secondItem="jg2-p1-erc" secondAttribute="trailing" id="i8V-lg-l5Y"/>
-                <constraint firstAttribute="bottom" secondItem="mGd-nm-kwz" secondAttribute="bottom" id="mjl-mW-wxY"/>
                 <constraint firstItem="F72-8B-ZFY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rCH-Tp-rc2"/>
-                <constraint firstAttribute="bottom" secondItem="PQ9-Cd-ND3" secondAttribute="bottom" id="uEd-nA-lJI"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="132" y="-11"/>
