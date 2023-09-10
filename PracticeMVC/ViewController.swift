@@ -16,6 +16,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         playersView.setPlayersInformation(p1: player1, p2: player2)
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(receiveNotification(_:)),
+            name: Notification.Name("NotificationPosted"),
+            object: nil
+        )
         playersView.delegate = self
         playersView.dataSource = self
         playersView.clearButton.addTarget(self, action: #selector(clearButtonTapped(_:)), for: .touchUpInside)
@@ -24,7 +31,16 @@ class ViewController: UIViewController {
     @objc func clearButtonTapped(_ sender: UIButton){
         player1.score = 0
         player2.score = 0
+        player1.done = false
+        player2.done = false
+        
     }
+    
+    @objc func receiveNotification(_ sender: Notification){
+        guard let content = sender.userInfo?["content"] as? String else {return}
+        print(content)
+    }
+    
 }
 
 extension ViewController: PlayerViewDelegate{

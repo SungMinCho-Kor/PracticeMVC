@@ -13,12 +13,14 @@ struct Player {
         didSet{
             if score > 10{
                 done = true
-            } else {
-                done = false
             }
         }
     }
-    var done: Bool
+    var done: Bool {
+        didSet{
+            postNotification()
+        }
+    }
     
     init(name: String = "Guest Player", score: Int = 0) {
         self.name = name
@@ -26,4 +28,11 @@ struct Player {
         self.done = false
     }
     
+    func postNotification(){
+        NotificationCenter.default.post(
+            name: NSNotification.Name("NotificationPosted"),
+            object: nil,
+            userInfo: ["content": "메롱"]
+        )
+    }
 }
